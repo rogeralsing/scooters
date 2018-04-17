@@ -1,11 +1,11 @@
 //Domain model
-typealias Scooters = Iterable<Int>
+typealias Scooters = Sequence<Int>
 
 fun scootersOf(vararg scooters: Int): Scooters =
         when {
             scooters.count() !in 1..100 -> throw IllegalArgumentException("scooters count must be between 1 and 100")
             scooters.any { it !in 0..1000 } -> throw IllegalArgumentException("scooters elements must be between 0 and 1000")
-            else -> scooters.asIterable()
+            else -> scooters.asSequence()
         }
 
 // The task contains no requirements on performance nor memory footprint, the requirements also states low numbers for size and ranges.
