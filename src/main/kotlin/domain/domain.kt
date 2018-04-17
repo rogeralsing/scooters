@@ -1,3 +1,5 @@
+package domain
+
 //Domain model
 typealias Scooters = Sequence<Int>
 
@@ -10,16 +12,16 @@ fun scootersOf(vararg scooters: Int): Scooters =
 
 // The task contains no requirements on performance nor memory footprint, the requirements also states low numbers for size and ranges.
 // Thus, choosing a solution with low development, maintenance and cognitive cost is favorable
-fun Scooters.runSimulation(fleetManagerCapacity: Int, fleetEngineerCapacity: Int): Int? =
+fun runSimulation(fleetManagerCapacity: Int, fleetEngineerCapacity: Int, scooters : Scooters): Int =
         when {
             fleetManagerCapacity !in 1..999 -> throw IllegalArgumentException("fleetManagerCapacity must be between 1 and 999")
             fleetEngineerCapacity !in 1..1000 -> throw IllegalArgumentException("fleetEngineerCapacity must be between 1 and 1000")
             //get the total number of engineers if the manager works in this district
-            else -> this.mapIndexed { district, _ ->
-                this
+            else -> scooters.mapIndexed { district, _ ->
+                scooters
                         .withFleetManager(district, fleetManagerCapacity)
                         .toFleetEngineerCount(fleetEngineerCapacity)
-            }.min() // the lowest number in all simulations is the correct answer
+            }.min()!! // the lowest number in all simulations is the correct answer
         }
 
 fun Scooters.withFleetManager(fleetManagerDistrict: Int, fleetManagerCapacity: Int): Scooters =
