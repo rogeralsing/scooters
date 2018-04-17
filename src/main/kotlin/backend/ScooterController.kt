@@ -9,7 +9,6 @@ data class Response(val fleet_engineers: Int)
 
 @RestController
 class ScooterController {
-    //@GetMapping("/greeting")
     @PostMapping("/scooters")
     fun greeting(@RequestBody request: Request) : Response {
         val scooters = scootersOf(*request.scooters.toIntArray())
