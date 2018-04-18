@@ -6,6 +6,7 @@ package domain
 // Thus, choosing a solution with low development, maintenance and cognitive cost is favorable
 //
 // This solution runs in O(n) time
+// (As opposed to the naive approach to brute force using O(n²) time)
 fun runSimulation(fleetManagerCapacity: Int, fleetEngineerCapacity: Int, scooters: IntArray): Int {
     when {
         fleetManagerCapacity !in 1..999 -> throw IllegalArgumentException("fleetManagerCapacity must be between 1 and 999")
@@ -14,19 +15,19 @@ fun runSimulation(fleetManagerCapacity: Int, fleetEngineerCapacity: Int, scooter
         scooters.any { it !in 0..1000 } -> throw IllegalArgumentException("scooters elements must be between 0 and 1000")
         else -> {
 
-            val requiredFleetEngineers = { scooters: Int -> Math.ceil(scooters.toDouble() / fleetEngineerCapacity).toInt() }
+            //helper function to calculate the required engineers in a district
+            val requiredFleetEngineers = { scootersInDistrict: Int -> Math.ceil(scootersInDistrict.toDouble() / fleetEngineerCapacity).toInt() }
 
             // step 1, first scan calculates the needed FEs per district 1. if the FM is not there, 2. if the FM is there.
             // so we have a list of pairs with the two values per district
-            val precalculated = scooters.map {
-                Pair(requiredFleetEngineers(it), requiredFleetEngineers(Math.max(0,it - fleetManagerCapacity)))
-            }
+            val precalculated = scooters.map { Pair(requiredFleetEngineers(it), requiredFleetEngineers(Math.max(0, it - fleetManagerCapacity))) }
 
             // step 2, caclulates a speculative total. this is the sum of the required engineers without taking the FM into account
-            val speculativeSum = precalculated.sumBy { it.first }
+            val speculativeResult = precalculated.sumBy { it.first }
 
-            // the final step 3, then folds over the precalculated just and evaluates the required engineers if the manager is in this district.
-            return precalculated.fold(Int.MAX_VALUE, { acc, pair -> Math.min(acc, speculativeSum - (pair.first - pair.second)) })
+            // the final step 3, then folds over the precalculated sequence and evaluates the required engineers if the manager is in each district.
+            // reduces by returning the smallest number for each fold
+            return precalculated.fold(Int.MAX_VALUE, { bestResult, pair -> Math.min(bestResult, speculativeResult - (pair.first - pair.second)) })
         }
     }
 }
