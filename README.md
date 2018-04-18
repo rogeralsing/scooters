@@ -48,5 +48,4 @@ curl -X POST \
 [https://github.com/rogeralsing/scooters/blob/master/src/test/kotlin/domain/DomainTest.kt](https://github.com/rogeralsing/scooters/blob/master/src/test/kotlin/domain/DomainTest.kt)
 
 ### Rest API
-[https://github.com/rogeralsing/scooters/blob/master/src/main/kotlin/backend/ScooterController.kt]
-(https://github.com/rogeralsing/scooters/blob/master/src/main/kotlin/backend/ScooterController.kt)
+[https://github.com/rogeralsing/scooters/blob/master/src/main/kotlin/backend/ScooterController.kt](https://github.com/rogeralsing/scooters/blob/master/src/main/kotlin/backend/ScooterController.kt)
