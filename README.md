@@ -1,5 +1,11 @@
 # Scooters
 
+## Requirements
+
+Gradle and Kotlin installations.
+
+## Running
+
 Running the application:
 
 ```text
