@@ -27,8 +27,8 @@ fun runSimulation(fleetManagerCapacity: Int, fleetEngineerCapacity: Int, scooter
             // step 2, calculates a speculative total. this is the sum of the required engineers without taking the FM into account
             val speculativeResult = districts.sumBy { it.requiredEngineers }
 
-            // the final step 3, then folds over the requiredEngineersPerDistrict sequence and evaluates the required engineers if the manager is in each district.
-            // reduces by returning the smallest number for each fold
+            // the final step 3, then folds over the districts sequence and evaluates the required engineers if the manager is in each district.
+            // fold by returning the smallest number for each fold
             // this is a single iteration over the sequence, we get the delta between first and second of the pair
             // this delta is subtracted from the speculative result, this give us the result when the FM is in this district
             // the resulting value is then compared to the bestResult
