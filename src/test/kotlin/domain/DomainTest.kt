@@ -35,21 +35,21 @@ class DomainTest {
 
 
     //[]scooters will contain between 1 and 100 elements.
-    @Test fun `scootersOf fails given no entries`() {
+    @Test fun `runSimulation fails given no scooter entries`() {
         assertFailsWith<IllegalArgumentException> {
             runSimulation(9,5, intArrayOf())
         }
     }
 
     //Each element in scooters will be between 0 and 1000.
-    @Test fun `scootersOf fails given negative entries`() {
+    @Test fun `runSimulation fails given negative scooter entries`() {
         assertFailsWith<IllegalArgumentException> {
             runSimulation(9,5, intArrayOf(0,0,0,-1))
         }
     }
 
     //Each element in scooters will be between 0 and 1000.
-    @Test fun `scootersOf fails given greater than 1000 entries`() {
+    @Test fun `runSimulation fails given greater than 1000 scooter entries`() {
         assertFailsWith<IllegalArgumentException> {
             runSimulation(9,5, intArrayOf(0,0,0,1001))
         }
