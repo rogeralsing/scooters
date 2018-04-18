@@ -37,3 +37,16 @@ curl -X POST \
   "scooters":[15, 10]
 }'
 ```
+
+
+## Solution
+
+### Domain Logic:
+[https://github.com/rogeralsing/scooters/blob/master/src/main/kotlin/domain/domain.kt](https://github.com/rogeralsing/scooters/blob/master/src/main/kotlin/domain/domain.kt)
+
+### Tests
+[https://github.com/rogeralsing/scooters/blob/master/src/test/kotlin/domain/DomainTest.kt](https://github.com/rogeralsing/scooters/blob/master/src/test/kotlin/domain/DomainTest.kt)
+
+### Rest API
+[https://github.com/rogeralsing/scooters/blob/master/src/main/kotlin/backend/ScooterController.kt]
+(https://github.com/rogeralsing/scooters/blob/master/src/main/kotlin/backend/ScooterController.kt)
