@@ -19,7 +19,7 @@ fun runSimulation(fleetManagerCapacity: Int, fleetEngineerCapacity: Int, scooter
             val requiredFleetEngineers = { scootersInDistrict: Int -> Math.ceil(scootersInDistrict.toDouble() / fleetEngineerCapacity).toInt() }
 
             // step 1, first scan calculates the needed FEs per district 1. if the FM is not there, 2. if the FM is there.
-            // so we have a list of pairs with the two values per district
+            // so we have a sequence of pairs with the two values per district
             val precalculated = scooters.map { Pair(requiredFleetEngineers(it), requiredFleetEngineers(Math.max(0, it - fleetManagerCapacity))) }
 
             // step 2, caclulates a speculative total. this is the sum of the required engineers without taking the FM into account
