@@ -1,4 +1,4 @@
-# scooters
+# Scooters
 
 Running the application:
 
