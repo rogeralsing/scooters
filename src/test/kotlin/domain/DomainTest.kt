@@ -5,13 +5,6 @@ import kotlin.test.assertFailsWith
 
 class DomainTest {
 
-    //[]scooters will contain between 1 and 100 elements.
-    //Each element in scooters will be between 0 and 1000.
-    @Test fun `scootersOf yields scooters of given valid entries`() {
-        val scooters = scootersOf(1,2,500)
-        assertEquals(3, scooters.count())
-    }
-
     /*
     1)
     input:
@@ -22,8 +15,7 @@ class DomainTest {
     { fleet_engineers: 3 }
      */
     @Test fun `runSimulation yields correct result given args of testcase 1`() {
-        val scooters = scootersOf(15,10)
-        val res = runSimulation(12,5,scooters)
+        val res = runSimulation(12,5, intArrayOf(15,10))
         assertEquals(3,res)
     }
 
@@ -37,8 +29,7 @@ class DomainTest {
     { fleet_engineers: 7 }
      */
     @Test fun `runSimulation yields correct result given args of testcase 2`() {
-        val scooters = scootersOf(11,15,13)
-        val res = runSimulation(9,5,scooters)
+        val res = runSimulation(9,5, intArrayOf(11,15,13))
         assertEquals(7,res)
     }
 
@@ -46,21 +37,21 @@ class DomainTest {
     //[]scooters will contain between 1 and 100 elements.
     @Test fun `scootersOf fails given no entries`() {
         assertFailsWith<IllegalArgumentException> {
-            scootersOf()
+            runSimulation(9,5, intArrayOf())
         }
     }
 
     //Each element in scooters will be between 0 and 1000.
     @Test fun `scootersOf fails given negative entries`() {
         assertFailsWith<IllegalArgumentException> {
-            scootersOf(0,0,0,-1)
+            runSimulation(9,5, intArrayOf(0,0,0,-1))
         }
     }
 
     //Each element in scooters will be between 0 and 1000.
     @Test fun `scootersOf fails given greater than 1000 entries`() {
         assertFailsWith<IllegalArgumentException> {
-            scootersOf(1,2,3,1001)
+            runSimulation(9,5, intArrayOf(0,0,0,1001))
         }
     }
 }
