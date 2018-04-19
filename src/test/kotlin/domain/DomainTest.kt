@@ -9,10 +9,10 @@ class DomainTest {
     1)
     input:
     { scooters: [15, 10],
-    C: 12,
-    P:5 }
+    fleetManagerCapacity: 12,
+    fleetEngineerCapacity:5 }
     expected output:
-    { fleet_engineers: 3 }
+    { fleetEngineers: 3 }
      */
     @Test fun `runSimulation yields correct result given args of testcase 1`() {
         val res = runSimulation(12,5, intArrayOf(15,10))
@@ -23,10 +23,10 @@ class DomainTest {
     2)
     input:
     { scooters: [11, 15, 13],
-    C: 9,
-    P:5 }
+    fleetManagerCapacity: 9,
+    fleetEngineerCapacity:5 }
     expected output:
-    { fleet_engineers: 7 }
+    { fleetEngineers: 7 }
      */
     @Test fun `runSimulation yields correct result given args of testcase 2`() {
         val res = runSimulation(9,5, intArrayOf(11,15,13))
