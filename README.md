@@ -50,7 +50,7 @@ curl -X POST \
 ### Domain Logic:[https://github.com/rogeralsing/scooters/blob/master/src/main/kotlin/testtask/scooters/ScooterService.kt](https://github.com/rogeralsing/scooters/blob/master/src/main/kotlin/testtask/scooters/ScooterService.kt)
 
 ### Tests
-[https://github.com/rogeralsing/scooters/blob/master/src/test/kotlin/domain/DomainTest.kt](https://github.com/rogeralsing/scooters/blob/master/src/test/kotlin/domain/DomainTest.kt)
+[https://github.com/rogeralsing/scooters/blob/master/src/test/kotlin//testtask/scooters/ScooterTest.kt](https://github.com/rogeralsing/scooters/blob/master/src/test/kotlin//testtask/scooters/ScooterTest.kt)
 
 ### Rest API
 [https://github.com/rogeralsing/scooters/blob/master/src/main/kotlin/testtask/scooters/ScooterController.kt](https://github.com/rogeralsing/scooters/blob/master/src/main/kotlin/testtask/scooters/ScooterController.kt)

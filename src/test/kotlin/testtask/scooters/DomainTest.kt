@@ -1,10 +1,10 @@
-package domain
+package testtask.scooters
 import org.junit.Test
 import testtask.scooters.runSimulation
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
-class DomainTest {
+class ScooterServiceTest {
 
     /*
     1)
