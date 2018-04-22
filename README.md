@@ -50,7 +50,7 @@ curl -X POST \
 [https://github.com/rogeralsing/scooters/blob/master/src/main/kotlin/testtask/scooters/ScooterService.kt](https://github.com/rogeralsing/scooters/blob/master/src/main/kotlin/testtask/scooters/ScooterService.kt)
 
 ### Tests
-[https://github.com/rogeralsing/scooters/blob/master/src/test/kotlin//testtask/scooters/ScooterTest.kt](https://github.com/rogeralsing/scooters/blob/master/src/test/kotlin//testtask/scooters/ScooterTest.kt)
+[https://github.com/rogeralsing/scooters/blob/master/src/test/kotlin//testtask/scooters/ScooterServiceTest.kt](https://github.com/rogeralsing/scooters/blob/master/src/test/kotlin//testtask/scooters/ScooterServiceTest.kt)
 
 ### Rest API
 [https://github.com/rogeralsing/scooters/blob/master/src/main/kotlin/testtask/scooters/ScooterController.kt](https://github.com/rogeralsing/scooters/blob/master/src/main/kotlin/testtask/scooters/ScooterController.kt)
