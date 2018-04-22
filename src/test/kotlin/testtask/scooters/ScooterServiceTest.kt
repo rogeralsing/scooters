@@ -1,6 +1,5 @@
 package testtask.scooters
 import org.junit.Test
-import testtask.scooters.runSimulation
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
