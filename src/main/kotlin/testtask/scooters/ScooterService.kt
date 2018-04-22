@@ -1,6 +1,6 @@
-package domain
+package testtask.scooters
 
-data class District(val requiredEngineers: Int, val requiredEngineersWithFM: Int)
+private data class District(val requiredEngineers: Int, val requiredEngineersWithFM: Int)
 
 // Domain model
 //

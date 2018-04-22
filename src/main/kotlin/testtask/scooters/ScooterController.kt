@@ -1,9 +1,7 @@
-package backend
+package testtask.scooters
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import domain.runSimulation
 import org.springframework.web.bind.annotation.*
-
 
 data class ScootersRequest(
         @JsonProperty("C") val fleetManagerCapacity: Int,
@@ -26,7 +24,7 @@ class ScooterController {
         return ScootersResponse(res)
 
         // Argument validation, which uses idiomatic IllegalArgumentException inside the Domain,
-        // currently causes 500 internal server error.
+        // currently causes 500 internal server error, when passing invalid args.
         // This is not what a proper REST API should use, rather it should be
         // 400 Invalid Request.
         // preferably using the JsonProperty names for the invalid arguments
