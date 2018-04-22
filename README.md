@@ -44,10 +44,10 @@ curl -X POST \
 }'
 ```
 
-
 ## Solution
 
-### Domain Logic:[https://github.com/rogeralsing/scooters/blob/master/src/main/kotlin/testtask/scooters/ScooterService.kt](https://github.com/rogeralsing/scooters/blob/master/src/main/kotlin/testtask/scooters/ScooterService.kt)
+### Domain Logic
+[https://github.com/rogeralsing/scooters/blob/master/src/main/kotlin/testtask/scooters/ScooterService.kt](https://github.com/rogeralsing/scooters/blob/master/src/main/kotlin/testtask/scooters/ScooterService.kt)
 
 ### Tests
 [https://github.com/rogeralsing/scooters/blob/master/src/test/kotlin//testtask/scooters/ScooterTest.kt](https://github.com/rogeralsing/scooters/blob/master/src/test/kotlin//testtask/scooters/ScooterTest.kt)
